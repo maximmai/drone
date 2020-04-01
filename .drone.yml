@@ -3,6 +3,7 @@ pipeline:
     build:
       image: docker:stable-dind
       commands:
+        - date
         - docker build -t registry.fastdns.io/drone/test .
       when:
         event: push
