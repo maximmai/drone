@@ -2,8 +2,6 @@ pipeline:
 
     build:
       image: docker:18.03
-      environment:
-        - DOCKER_HOST=tcp://172.17.0.1:2375
       commands:
         - docker build -t registry.fastdns.io/drone/test .
       when:
