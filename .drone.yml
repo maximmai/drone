@@ -6,3 +6,4 @@ pipeline:
         - docker build -t registry.fastdns.io/drone/test .
       when:
         event: push
+        branch: master
