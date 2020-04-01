@@ -1,7 +1,7 @@
 pipeline:
 
     build:
-      image: docker:18.03
+      image: docker:stable-dind
       commands:
         - docker build -t registry.fastdns.io/drone/test .
       when:
