@@ -1,7 +1,7 @@
 pipeline:
 
-    test_build:
-      image: docker:18.09
+    build:
+      image: docker:18.03
       environment:
         - DOCKER_HOST=tcp://172.17.0.1:2375
       commands:
