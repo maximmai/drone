@@ -5,7 +5,7 @@ name: default
 
 steps:
 - name: test
-  image: docker:dind
+  image: docker:stable
   volumes:
   - name: dockersock
     path: /var/run
@@ -15,7 +15,7 @@ steps:
 
 services:
 - name: docker
-  image: docker:dind
+  image: docker:stable
   
   volumes:
   - name: dockersock
