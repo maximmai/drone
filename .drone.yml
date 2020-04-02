@@ -1,10 +1,18 @@
-pipeline:
+---
+kind: pipeline
+type: kubernetes
+name: default
 
-    build:
-      image: docker:stable-dind
-      commands:
-        - date
-        - docker build -t registry.fastdns.io/drone/test .
-      when:
-        event: push
-        branch: master
+steps:
+- name: test
+  image: docker:dind
+  volumes:
+  - name: dockersock
+    path: /var/run/docker.sock
+  commands:
+  - docker ps -a
+
+volumes:
+- name: dockersock
+  host:
+    path: /var/run/docker.sock
